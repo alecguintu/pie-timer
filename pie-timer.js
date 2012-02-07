@@ -16,7 +16,7 @@
     init: function(settings) {
       var options = {
         percent: 100,
-        time: 5000,
+        duration: 5000,
         withPercent: true,
         withCloser: true,
         animate: true,
@@ -27,7 +27,6 @@
 
       return this.each(function() {
         var elem = $(this);
-        elem.pietimer('draw', options);
 
         if (options.animate) {
           elem.pietimer('play', options);
@@ -46,6 +45,8 @@
         block: false
       }
       if (settings) { $.extend(options, settings); }
+
+      $(this).empty();
 
       if (options.withPercent) {
         $(this).append('<div class="percent">'+ Math.round(options.percent) +'%</div>');
@@ -70,34 +71,32 @@
         'transform':'rotate('+deg+'deg)'
       });
 
-      $(this).append(elem);
-
       if (options.block) {
         $(this).addClass('fill');
       }
+
+      $(this).append(elem);
     },
 
-    // options [HASH] percent, withPercent, withCloser, block
     play: function(options) {
-      $(this).data('tseconds', options.time);
-      $(this).data('tfinish', new Date().getTime() + options.time);
+      $(this).data('tseconds', options.duration);
+      $(this).data('tfinish', new Date().getTime() + options.duration);
       $(this).data('uPercent', options.percent);
 
-      e = $(this);
       var timer = setInterval(function() {
-        var seconds = (e.data('tfinish') - new Date().getTime());
+        var seconds = ($(this).data('tfinish') - new Date().getTime());
 
         if (seconds <= 0) {
-          options.percent = 100
-          e.pietimer('draw', options);
+          options.percent = $(this).data('uPercent');
+          $(this).pietimer('draw', options);
 
-          clearInterval(e.data('timer'));
+          clearInterval($(this).data('timer'));
         } else {
-          options.percent = 100 - ((seconds / e.data('tseconds')) * 100);
+          options.percent = $(this).data('uPercent') - ((seconds / $(this).data('tseconds')) * $(this).data('uPercent'));
 
-          e.pietimer('draw', options);
+          $(this).pietimer('draw', options);
         }
-      }, 50);
+      }.bind(this), 50);
 
       $(this).data('timer', timer);
     },
@@ -111,9 +110,10 @@
 
 
 $(document).ready(function() {
-  $("#new-timer").pietimer({percent:55, withPercent:false, block:true});
-  $("#other-timer").pietimer({percent:65, animate:false});
-  $("#another-timer").pietimer({percent:35, animate:false});
+  $("#full-pie").pietimer({block:true});
+  $("#new-timer").pietimer({percent:35, withPercent:false, block:true});
+  $("#other-timer").pietimer({percent:65, animate:true});
+  $("#another-timer").pietimer('draw', {percent:35, animate:false});
   $("#another-one-timer").pietimer({percent:73, animate:false, withCloser:false});
 });
 
