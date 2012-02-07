@@ -1,3 +1,17 @@
+/*
+* Pie Timer
+*
+* A simple pie display/timer
+*
+* Credit goes to http://atomicnoggin.ca/blog/2010/02/20/pure-css3-pie-charts/
+* and for initial code from http://blakek.us/css3-pie-graph-timer-with-jquery/
+* and I expanded and made into a jQuery plugin
+*
+* Author: Alec Guintu
+* and to those the code originated from.
+*
+* v1.0
+*************************************************************************/
 (function($) {
 
   $.fn.pietimer = function(method) {
@@ -107,13 +121,4 @@
   };
 
 })(jQuery);
-
-
-$(document).ready(function() {
-  $("#full-pie").pietimer({block:true});
-  $("#new-timer").pietimer({percent:35, withPercent:false, block:true});
-  $("#other-timer").pietimer({percent:65, animate:true});
-  $("#another-timer").pietimer('draw', {percent:35, animate:false});
-  $("#another-one-timer").pietimer({percent:73, animate:false, withCloser:false});
-});
 

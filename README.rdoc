@@ -1,0 +1,32 @@
+= A pie-type display/timer
+
+== Installation
+
+Download file(s):
+  pie-timer.min.js
+  pie-timer.css
+
+and install to appropriate places.
+
+== To use
+
+  View more samples at the sample folder.
+
+== Callbacks
+
+
+* Any bug or issue, please send me an email to aeguintu@gmail.com
+
+== TODO
+
+* Fix readme more
+* create after callback
+* setting color, height via optiosn
+* get percent via data attribute
+
+== Thanks
+
+Proper credits got to:
+to http://atomicnoggin.ca/blog/2010/02/20/pure-css3-pie-charts/
+to http://blakek.us/css3-pie-graph-timer-with-jquery/.
+
