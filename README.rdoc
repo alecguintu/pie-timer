@@ -1,4 +1,6 @@
-= A pie-type display/timer
+= A pie-type timer/display
+
+A pie timer/display jQuery plugin.
 
 == Installation
 
@@ -6,27 +8,40 @@ Download file(s):
   pie-timer.min.js
   pie-timer.css
 
-and install to appropriate places.
+and install to appropriate places (make sure you have jQuery already).
 
 == To use
 
-  View more samples at the sample folder.
+Add a div with a class "timer". The id would ease up selecting the div.
+
+  <div id="id_pick_you" class="timer"></div>
+
+then add the pietimer function in your javascript.
+
+  $("#id_pick_you").pietimer();
+
+View more samples at the sample folder.
 
 == Callbacks
 
+Future
 
+== Bugs
+* Doesn't work with Safari and IE for now
 * Any bug or issue, please send me an email to aeguintu@gmail.com
 
 == TODO
 
-* Fix readme more
 * create after callback
-* setting color, height via optiosn
-* get percent via data attribute
+* setting color, height via options
+* get some options via data attribute
+* Fix README more
 
 == Thanks
 
-Proper credits got to:
-to http://atomicnoggin.ca/blog/2010/02/20/pure-css3-pie-charts/
-to http://blakek.us/css3-pie-graph-timer-with-jquery/.
+Proper credits go to:
 
+  http://atomicnoggin.ca/blog/2010/02/20/pure-css3-pie-charts/
+  http://blakek.us/css3-pie-graph-timer-with-jquery/.
+
+== License

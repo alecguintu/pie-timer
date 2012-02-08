@@ -23,7 +23,7 @@
 
     } else {
       $.error('Method ' +  method + ' does not exist on jQuery.tooltip');
-    }  
+    }
   };
 
   var methods = {
@@ -67,7 +67,7 @@
       }
 
       if (options.withCloser) {
-        $(this).append('<div class="closer"></div><div class="closer filler"></div>');
+        $(this).append('<div class="closer"></div>');
       }
 
       var elem = $('<div class="slice"><div class="pie"></div></div>');
