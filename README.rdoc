@@ -38,7 +38,7 @@ Future
 == TODO
 
 * create after callback
-* setting color, height via options
+* setting color, height via options. done
 * get some options via data attribute
 * Fix README more
 

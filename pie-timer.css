@@ -1,6 +1,6 @@
 .pietimer {
   position: relative;
-  font-size: 200px;
+  font-size: 150px;
   width: 1em;
   height: 1em;
   float: left;
@@ -63,13 +63,6 @@
   -o-transform: rotate(180deg) !important;
   -ms-transform: rotate(180deg) !important;
   transform: rotate(180deg) !important;
-}
-.pietimer > .filler {
-  -moz-transform: rotate(360deg) !important;
-  -webkit-transform: rotate(360deg) !important;
-  -o-transform: rotate(360deg) !important;
-  -ms-transform: rotate(360deg);
-  transform: rotate(360deg) !important;
 }
 
 .pietimer.fill > .closer {

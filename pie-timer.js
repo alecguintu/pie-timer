@@ -30,37 +30,42 @@
     init: function(settings) {
       var options = {
         percent: 100,
+        color: '#72B359',
         duration: 5000,
         withPercent: true,
         withCloser: true,
+        closerColor: '#C8E1BE',
         animate: true,
-        block: false
+        block: false,
+        size: 150
       };
 
       if (settings) { $.extend(options, settings); }
 
       return this.each(function() {
-        var elem = $(this);
 
         if (options.animate) {
-          elem.pietimer('play', options);
+          $(this).pietimer('play', options);
         } else {
-          elem.pietimer('draw', options);
+          $(this).pietimer('draw', options);
         }
       });
     },
 
-    // options [HASH] percent, withPercent, withCloser, block
     draw: function(settings) {
       var options = {
         percent: 100,
+        color: '#72B359',
         withPercent: true,
         withCloser: true,
-        block: false
+        closerColor: '#C8E1BE',
+        block: false,
+        size: 150
       };
       if (settings) { $.extend(options, settings); }
 
       $(this).empty();
+      $(this).css('font-size', options.size+'px');
 
       if (options.withPercent) {
         $(this).append('<div class="percent">'+ Math.round(options.percent) +'%</div>');
@@ -79,15 +84,21 @@
 
       var deg = 360 / 100 * options.percent;
       elem.children('.pie').css({
-        '-moz-transform':'rotate('+deg+'deg)',
-        '-webkit-transform':'rotate('+deg+'deg)',
-        '-o-transform':'rotate('+deg+'deg)',
-        msTransform:'rotate('+deg+'deg)',
-        'transform':'rotate('+deg+'deg)'
+        '-moz-transform': 'rotate('+deg+'deg)',
+        '-webkit-transform': 'rotate('+deg+'deg)',
+        '-o-transform': 'rotate('+deg+'deg)',
+        msTransform: 'rotate('+deg+'deg)',
+        'transform': 'rotate('+deg+'deg)'
       });
 
       if (options.block) {
         $(this).addClass('fill');
+
+        elem.children('.pie').css('background-color', options.color);
+        $(this).find('.closer').css('background-color', options.closerColor);
+      } else {
+        elem.children('.pie').css('border-color', options.color);
+        $(this).find('.closer').css('border-color', options.closerColor);
       }
 
       $(this).append(elem);
