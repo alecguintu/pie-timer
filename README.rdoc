@@ -26,8 +26,13 @@ View more samples at the sample folder.
 
 Future
 
+== Works with
+* Chrome
+* Firefox
+* IE9
+
 == Bugs
-* Doesn't work with Safari and IE for now
+* Doesn't work with Safari
 * Any bug or issue, please send me an email to aeguintu@gmail.com
 
 == TODO

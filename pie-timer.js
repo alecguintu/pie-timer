@@ -35,7 +35,7 @@
         withCloser: true,
         animate: true,
         block: false
-      }
+      };
 
       if (settings) { $.extend(options, settings); }
 
@@ -57,7 +57,7 @@
         withPercent: true,
         withCloser: true,
         block: false
-      }
+      };
       if (settings) { $.extend(options, settings); }
 
       $(this).empty();
@@ -74,7 +74,7 @@
 
       if (options.percent > 50) {
         elem.addClass('gt50');
-        elem.append('<div class="pie fill"></div>')
+        elem.append('<div class="pie fill"></div>');
       }
 
       var deg = 360 / 100 * options.percent;
@@ -82,6 +82,7 @@
         '-moz-transform':'rotate('+deg+'deg)',
         '-webkit-transform':'rotate('+deg+'deg)',
         '-o-transform':'rotate('+deg+'deg)',
+        msTransform:'rotate('+deg+'deg)',
         'transform':'rotate('+deg+'deg)'
       });
 
@@ -93,26 +94,24 @@
     },
 
     play: function(options) {
-      $(this).data('tseconds', options.duration);
-      $(this).data('tfinish', new Date().getTime() + options.duration);
-      $(this).data('uPercent', options.percent);
+      var tseconds = options.duration;
+      var tfinish = new Date().getTime() + options.duration;
+      var upercent = options.percent;
 
       var timer = setInterval(function() {
-        var seconds = ($(this).data('tfinish') - new Date().getTime());
+        var seconds = (tfinish - new Date().getTime());
 
         if (seconds <= 0) {
-          options.percent = $(this).data('uPercent');
+          options.percent = upercent;
           $(this).pietimer('draw', options);
 
-          clearInterval($(this).data('timer'));
+          clearInterval(timer);
         } else {
-          options.percent = $(this).data('uPercent') - ((seconds / $(this).data('tseconds')) * $(this).data('uPercent'));
+          options.percent = upercent - ((seconds / tseconds) * upercent);
 
           $(this).pietimer('draw', options);
         }
       }.bind(this), 50);
-
-      $(this).data('timer', timer);
     },
 
     stop: function() {

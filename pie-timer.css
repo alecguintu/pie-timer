@@ -36,6 +36,7 @@
   -moz-transform: rotate(180deg) !important;
   -webkit-transform: rotate(180deg) !important;
   -o-transform: rotate(180deg) !important;
+  -ms-transform: rotate(180deg) !important;
   transform: rotate(180deg) !important;
 }
 .pietimer.fill > .percent {
@@ -54,12 +55,21 @@
   width: 0.8em; /* 1 - (2 * border width) */
   height: 0.8em; /* 1 - (2 * border width) */
   -moz-border-radius: 0.5em;
-  -webkit-border-radius: 0.5em; 
-  border-radius: 0.5em; 
-  -webkit-transform: rotate(180deg);
+  -webkit-border-radius: 0.5em;
+  border-radius: 0.5em;
+
+  -moz-transform: rotate(180deg) !important;
+  -webkit-transform: rotate(180deg) !important;
+  -o-transform: rotate(180deg) !important;
+  -ms-transform: rotate(180deg) !important;
+  transform: rotate(180deg) !important;
 }
 .pietimer > .filler {
+  -moz-transform: rotate(360deg) !important;
   -webkit-transform: rotate(360deg) !important;
+  -o-transform: rotate(360deg) !important;
+  -ms-transform: rotate(360deg);
+  transform: rotate(360deg) !important;
 }
 
 .pietimer.fill > .closer {
