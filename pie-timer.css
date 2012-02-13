@@ -23,7 +23,7 @@
   clip: rect(auto auto auto auto);
 }
 .pietimer > .slice > .pie {
-  border: 0.1em solid #72B359;
+  border: 0.1em solid #888;
   position: absolute;
   width: 0.8em; /* 1 - (2 * border width) */
   height: 0.8em; /* 1 - (2 * border width) */
@@ -38,19 +38,19 @@
   -o-transform: rotate(180deg) !important;
   -ms-transform: rotate(180deg) !important;
   transform: rotate(180deg) !important;
-}
+  }
 .pietimer.fill > .percent {
   display: none;
 }
 .pietimer.fill > .slice > .pie {
   border: transparent;
-  background-color: #72B359;
+  background-color: #888;
   width: 1em;
   height: 1em;
 }
 
 .pietimer > .closer {
-  border: 0.1em solid #C8E1BE;
+  border: 0.1em solid #DDD;
   position: absolute;
   width: 0.8em; /* 1 - (2 * border width) */
   height: 0.8em; /* 1 - (2 * border width) */
@@ -67,7 +67,7 @@
 
 .pietimer.fill > .closer {
   border: transparent;
-  background-color: #C8E1BE;
+  background-color: #DDD;
   width: 1em;
   height: 1em;
 }

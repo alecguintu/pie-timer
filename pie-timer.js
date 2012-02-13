@@ -30,11 +30,11 @@
     init: function(settings) {
       var options = {
         percent: 100,
-        color: '#72B359',
+        color: '#888',
         duration: 5000,
         withPercent: true,
         withCloser: true,
-        closerColor: '#C8E1BE',
+        closerColor: '#DDD',
         animate: true,
         block: false,
         size: 150
@@ -55,10 +55,10 @@
     draw: function(settings) {
       var options = {
         percent: 100,
-        color: '#72B359',
+        color: '#888',
         withPercent: true,
         withCloser: true,
-        closerColor: '#C8E1BE',
+        closerColor: '#DDD',
         block: false,
         size: 150
       };
