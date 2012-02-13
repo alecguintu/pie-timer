@@ -3,8 +3,9 @@
 *
 * A simple pie display/timer
 *
-* Credit goes to http://atomicnoggin.ca/blog/2010/02/20/pure-css3-pie-charts/
-* and for initial code from http://blakek.us/css3-pie-graph-timer-with-jquery/
+* Proper credit goes to both
+* http://atomicnoggin.ca/blog/2010/02/20/pure-css3-pie-charts/ and
+* http://blakek.us/css3-pie-graph-timer-with-jquery/
 * and I expanded and made into a jQuery plugin
 *
 * Author: Alec Guintu
@@ -132,3 +133,12 @@
 
 })(jQuery);
 
+if (typeof Function.prototype.bind != 'function') {
+  Function.prototype.bind = function (bind) {
+    var self = this;
+    return function () {
+      var args = Array.prototype.slice.call(arguments);
+      return self.apply(bind || null, args);
+    };
+  };
+}

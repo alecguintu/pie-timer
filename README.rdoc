@@ -12,9 +12,9 @@ and install to appropriate places (make sure you have jQuery already).
 
 == To use
 
-Add a div with a class "timer". The id would ease up selecting the div.
+Add a div with a class "pietimer". The id would ease up selecting the div.
 
-  <div id="id_pick_you" class="timer"></div>
+  <div id="id_pick_you" class="pietimer"></div>
 
 then add the pietimer function in your javascript.
 
@@ -26,13 +26,13 @@ View more samples at the sample folder.
 
 Future
 
-== Works with
+== Tested with
 * Chrome
 * Firefox
 * IE9
+* Safari
 
 == Bugs
-* Doesn't work with Safari
 * Any bug or issue, please send me an email to aeguintu@gmail.com
 
 == TODO
