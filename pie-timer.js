@@ -30,7 +30,7 @@
   var methods = {
     init: function(settings) {
       var options = {
-        percent: 100,
+        percent: $(this).attr('data-percent') || 100,
         color: '#888',
         duration: 5000,
         withPercent: true,
@@ -55,7 +55,7 @@
 
     draw: function(settings) {
       var options = {
-        percent: 100,
+        percent: $(this).attr('data-percent') || 100,
         color: '#888',
         withPercent: true,
         withCloser: true,
